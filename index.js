@@ -13,10 +13,10 @@ mongoose.connect('mongodb+srv://admin:wwwwww@cluster0.ypdaeoi.mongodb.net/blog?r
 const app = express()
 
 app.use(express.json());
-app.use(cors())
 
 
-app.post('/posts', postValidator, create );
+
+app.post('/', postValidator, create );
 app.get('/posts',  getAll );
 app.get('/posts/:id',  getOne );
 app.delete('/posts/:id', remove);
