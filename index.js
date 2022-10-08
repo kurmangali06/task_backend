@@ -22,11 +22,11 @@ app.get('/posts/:id',  getOne );
 app.delete('/posts/:id', remove);
 app.patch('/posts/:id',postValidator, update)
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 app.listen(port, (err) => {
   if(err) {
-    return console.log(err)
+    return console.log(err, "error")
   }
   console.log('server ok!', port)
 } )
