@@ -15,9 +15,6 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 
-app.get('/', (req, res)=>{
-  res.send("hello world!")
-});
 
 app.post('/posts', postValidator, create );
 app.get('/posts',  getAll );
@@ -25,10 +22,11 @@ app.get('/posts/:id',  getOne );
 app.delete('/posts/:id', remove);
 app.patch('/posts/:id',postValidator, update)
 
+const port = process.env.PORT || 5000
 
-app.listen(5000, (err) => {
+app.listen(port, (err) => {
   if(err) {
     return console.log(err)
   }
-  console.log('server ok!')
+  console.log('server ok!', port)
 } )
