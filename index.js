@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 
-app.post('/', postValidator, create );
+app.post('/posts', postValidator, create );
 app.get('/posts',  getAll );
 app.get('/posts/:id',  getOne );
 app.delete('/posts/:id', remove);
